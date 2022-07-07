@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Structural Bioinformatics is a broad discipline that covers structural and computational biology, from visualization and analysis of the structure of biomacromolecules to protein modeling and molecular docking. The field have experienced a great revolution in the last decade. The increase of experimental capacities to analyze structure of proteins and other biological molecules and structures (see Callaway (2020)) and the development of Artificial Intelligence (AI)-assisted structure prediction boosted the capacity of life-science researchers to address a wide variety of questions regarding proteins diversity, evolution and function. The implications of this revolution in biology, biotechnology and biomedicine are still unforeseen.\nFor a short introductory course on protein modeling, I propose the following three basic objectives:\n\nIdentify the main applications and limitations of prediction of protein structures in biomedicine and biotechnology.\nBecome familiar with classic and state-of-the-art protein modeling methods.\nBasic understanding of the result output of a protein modeling experiment and how to evaluate and eventually improve the model quality."
+  },
+  {
+    "objectID": "intro.html#warning-for-future-structural-biologists",
+    "href": "intro.html#warning-for-future-structural-biologists",
+    "title": "Introduction",
+    "section": "Warning for future structural biologists",
+    "text": "Warning for future structural biologists\n\n\n\nCeci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf\n\n\nThe surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled La trahison des images (1928–1929). The most renowned of those paintings show a smoking pipe and the following caption underneath: “Ceci n’est pas une pipe” (This is not a pipe). Indeed! It is the painting of a pipe.\nSimilarly, a picture of a protein, or a PDF file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have important limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins in vivo are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability. That does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications."
+  }
+]

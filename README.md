@@ -14,4 +14,4 @@ You can reach me by [email](mailto::modesto.redrejo@uam.es) or [Twitter](https:/
 This is a [Quarto](https://quarto.org/docs/books "Quarto") book. All this material is open access and it is shared under [CC BY-NC license](https://creativecommons.org/licenses/by-nc/2.0/ "CC BY-NC license").
 
 #
-## [Go to course contents here](/<handson2022>index.html)
+## [Go to course contents here](https://mredrejo.github.io/handson2022/)

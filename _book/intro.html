@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.318">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Modesto Redrejo Rodríguez">
+<meta name="dcterms.date" content="2022-07-07">
+
+<title>Hands-on introduction to protein modeling - 2&nbsp; Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./homology.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Hands-on introduction to protein modeling</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Disclaimer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./homology.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Homology Modeling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#goals-and-warnings" id="toc-goals-and-warnings" class="nav-link active" data-scroll-target="#goals-and-warnings"> <span class="header-section-number">2.1</span> Goals and Warnings</a></li>
+  <li><a href="#warning-for-future-structural-biologists" id="toc-warning-for-future-structural-biologists" class="nav-link" data-scroll-target="#warning-for-future-structural-biologists"> <span class="header-section-number">2.2</span> Warning for future structural biologists</a></li>
+  <li><a href="#before-going-forward-protein-structure-101" id="toc-before-going-forward-protein-structure-101" class="nav-link" data-scroll-target="#before-going-forward-protein-structure-101"> <span class="header-section-number">3</span> Before going forward: Protein Structure 101</a>
+  <ul class="collapse">
+  <li><a href="#playing-with-secondary-structures" id="toc-playing-with-secondary-structures" class="nav-link" data-scroll-target="#playing-with-secondary-structures"> <span class="header-section-number">3.0.1</span> Playing with secondary structures</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4</span> References</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Modesto Redrejo Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 7, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="goals-and-warnings" class="level2" data-link="Preface" data-number="2.1">
+<h2 data-link="Preface" data-number="2.1" class="anchored" data-anchor-id="goals-and-warnings"><span class="header-section-number">2.1</span> Goals and Warnings</h2>
+<p><a href="https://en.wikipedia.org/wiki/Structural_bioinformatics" title="Wikipedia">Structural Bioinformatics</a> is a broad discipline that covers structural and computational biology, from visualization and analysis of the structure of biomacromolecules to protein modeling and molecular docking. The field have experienced a great revolution in the last decade. The increase of experimental capacities to analyze structure of proteins and other biological molecules and structures (see <span class="citation" data-cites="callaway2020">Callaway (<a href="#ref-callaway2020" role="doc-biblioref">2020</a>)</span>) and the development of Artificial Intelligence (AI)-assisted structure prediction boosted the capacity of life-science researchers to address a wide variety of questions regarding proteins diversity, evolution and function. The implications of this revolution in biology, biotechnology and biomedicine are still unforeseen.<br>
+For a short introductory course on protein modeling, I propose the following three basic objectives:</p>
+<ol type="1">
+<li><p>Identify the main applications and limitations of prediction of protein structures in biomedicine and biotechnology.</p></li>
+<li><p>Become familiar with classic and state-of-the-art protein modeling methods.</p></li>
+<li><p>Basic understanding of the result output of a protein modeling experiment and how to evaluate and eventually improve the model quality.</p></li>
+</ol>
+</section>
+<section id="warning-for-future-structural-biologists" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="warning-for-future-structural-biologists"><span class="header-section-number">2.2</span> Warning for future structural biologists</h2>
+<div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf"><img src="pics/magritte.png" title="Ceci n'est pas une proteine" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Ceci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf</figcaption><p></p>
+</figure>
+</div>
+<p>The surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images" title="Magritte"><strong><em>La trahison des images</em></strong> (1928–1929)</a>. The most renowned of those paintings show a smoking pipe and the following caption underneath: “Ceci n’est pas une pipe” (This is not a pipe). Indeed! It is the painting of a pipe.</p>
+<p>Similarly, a picture of a protein, or a PDF file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have important limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability. That does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
+</section>
+<section id="before-going-forward-protein-structure-101" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Before going forward: Protein Structure 101</h1>
+<p>Although you can make some protein modeling without being an expert in structural biology, a basic understanding of protein structure is strongly advisable. Over the years, I noticed that graduate students in biology, biomedicine and related fields have very different background on protein structure. If you want to review and update your background on protein structure, I recommend you the great review by <span class="citation" data-cites="stollar2020">Stollar and Smith (<a href="#ref-stollar2020" role="doc-biblioref">2020</a>)</span> and the wikipedia articles on protein structures (<a href="https://en.wikipedia.org/wiki/Protein_structure" class="uri">https://en.wikipedia.org/wiki/Protein_structure</a>), which constituted my main source for this section.</p>
+<div id="fig-anonymous-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Protein_structure"><img src="pics/Protein_structure.png" title="Protein Structure" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Protein structure levels, using human PCNA (PDB 1AXC) as an example.</figcaption><p></p>
+</figure>
+</div>
+<p>Proteins are key components of life, playing key roles in almost any possible vital function, either as passive, scaffolding elements or as active enzymes that catalyze metabolic reactions. Proteins are built as polymers of amino acids and the sequence of amino acids of a particular protein can be also called <strong>the primary structure</strong> of the protein. Amino acids chains can spontaneously fold up into three-dimensional structures, mostly stabilized by hydrogen bonds between amino acids.&nbsp; The amino acid sequence determine different layers of 3D structure. Each of the 20 natural amino acids has different physicochemical properties that affect its preferred conformation. Thus, a first level of folding is called <strong>secondary structure</strong>, forming common patterns as we will see in a moment.</p>
+<div id="fig-anonymous-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.reddit.com/r/chemistry/comments/acyald/venn_diagram_showing_the_properties_of_the_20/"><img src="pics/aa.png" title="Amino acids clasification by type" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Amino acids clasification by type</figcaption><p></p>
+</figure>
+</div>
+<p>These stretches of secondary structure patterns can fold in 3D due to interactions between the side chains of amino acids. This is called protein tertiary structure. Finally, two or more individual peptides chains can form a&nbsp; multisubunit proteins that have the so-called <strong>quaternary structure</strong>.</p>
+<p>It should be noted that the peptide bond itself cannot rotate as it has double bond-like character. Therefore, rotation can only occur about the bond between the Cα and the C = O group, (the phi (φ) angle) and the Cα and the NH group, (the psi (ψ) angle). In effect, the polypeptide backbone chain is composed of a repeating series of two rotatable bonds followed by one non-rotatable (peptide) bond. However, not all 360º of the psi and phi angles are possible as neighbouring sidechains can clash due to steric hindrance. In effect, for certain angles and amino acid combinations, the atoms cannot be in the same physical place and this partly explains why some amino acids have a higher propensity (likelihood) to form different types of secondary structure.</p>
+<div id="fig-anonymous-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://portlandpress.com/essaysbiochem/article/64/4/649/226515/Uncovering-protein-structure"><img src="pics/peptide_bond.png" title="Peptide bond" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Scheme of a generic polypeptide chain. Residue side chains are denoted as R. Coloured rectangles indicate sets of six atoms that are coplanar due to the double-bond character of the peptide bond. Arrows indicate the bonds that are free to rotate with the angle of rotation about the N–Cα known as phi and about the Cα–C known as psi. Note that only peptide backbone bonds are labelled, in most cases the R group bond is free to rotate.</figcaption><p></p>
+</figure>
+</div>
+<p>Within these restraints, the two principal local conformations that avoid steric hindrance and maximise backbone–backbone hydrogen bonding are the α-helix and the β-sheet secondary structures. The α-helix is a right-handed coil in which backbone NH group hydrogen bonds to the backbone C = O group of the amino acid located four residues earlier along the protein sequence. This results in a polypeptide chain that twists in a regular coil shape with the R-groups pointing outwards away from the peptide backbone. It takes approximately 3.6 residues to complete a full turn of a helix.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-anonymous-5" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Alpha_helix"><img src="pics/alpha.gif" title="Alpha helix" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Alpha helix</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-anonymous-6" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Beta_sheet"><img src="pics/Animated_Beta_sheet.gif" title="Beta sheet" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Beta sheet</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Different amino-acid sequences have different propensities for forming α-helical structure. <a href="https://en.wikipedia.org/wiki/Methionine" title="Methionine">Methionine</a>, <a href="https://en.wikipedia.org/wiki/Alanine" title="Alanine">alanine</a>, <a href="https://en.wikipedia.org/wiki/Leucine" title="Leucine">leucine</a>, <a href="https://en.wikipedia.org/wiki/Glutamate" title="Glutamate">glutamate</a>, and <a href="https://en.wikipedia.org/wiki/Lysine" title="Lysine">lysine</a> have especially high helix-forming propensities, whereas <a href="https://en.wikipedia.org/wiki/Proline" title="Proline">proline</a> and <a href="https://en.wikipedia.org/wiki/Glycine" title="Glycine">glycine</a> have poor helix-forming propensities. <a href="https://en.wikipedia.org/wiki/Proline" title="Proline">Proline</a> either breaks or kinks a helix, both because it cannot donate an amide <a href="https://en.wikipedia.org/wiki/Hydrogen_bond" title="Hydrogen bond">hydrogen bond</a> (having no amide hydrogen), and also because its bulky sidechain interferes sterically with the backbone of the preceding turn. However, proline is often seen as the <em>first</em> residue of a helix, it is presumed due to its structural rigidity. At the other extreme, <a href="https://en.wikipedia.org/wiki/Glycine" title="Glycine">glycine</a> also tends to disrupt helices because its high conformational flexibility makes it entropically expensive to adopt the relatively constrained α-helical structure.</p>
+<p>β-sheets are composed of two or more extended polypeptide chains called β-strands that run alongside each other. They can be arranged in either a parallel or antiparallel manner. The residues arrange themselves in a regular zigzag manner with the adjacent peptide bonds pointing in opposite directions. In this arrangement, the NH group and the C = O group of each amino acid is hydrogen-bonded to the C = O group and NH group respectively on the adjacent strands. Chains can run in opposite directions, forming an antiparallel β-sheet, or in the same direction, forming a parallel β-sheet. Sidechains from each of the residues point away from the sheets and alternate in opposite directions between residues. It is common to see a pattern of alternating hydrophilic and hydrophobic residues in the primary structure, giving the β-sheets hydrophilic and hydrophobic faces.</p>
+<p>Large aromatic residues (<a href="https://en.wikipedia.org/wiki/Tyrosine" title="Tyrosine">tyrosine</a>, <a href="https://en.wikipedia.org/wiki/Phenylalanine" title="Phenylalanine">phenylalanine</a>, <a href="https://en.wikipedia.org/wiki/Tryptophan" title="Tryptophan">tryptophan</a>) and β-branched amino acids (<a href="https://en.wikipedia.org/wiki/Threonine" title="Threonine">threonine</a>, <a href="https://en.wikipedia.org/wiki/Valine" title="Valine">valine</a>, <a href="https://en.wikipedia.org/wiki/Isoleucine" title="Isoleucine">isoleucine</a>) are favored to be found in β-strands. As i the case of α-helixes, β-strands are often ended by <a href="https://en.wikipedia.org/wiki/Glycine" title="Glycine">glycines</a>, which are especially common in β-turns (the most common conector between strands), as <a href="https://en.wikipedia.org/wiki/Amino_acid" title="Amino acid">amino acids</a> with positive φ angles.</p>
+<section id="playing-with-secondary-structures" class="level3" data-number="3.0.1">
+<h3 data-number="3.0.1" class="anchored" data-anchor-id="playing-with-secondary-structures"><span class="header-section-number">3.0.1</span> Playing with secondary structures</h3>
+<p><img src="pics/handson.png" title="Hands-on" class="img-fluid"></p>
+<p>There are a few online alternatives to model any peptide sequence and quickly see the effect of amino acids composition in the secondary structure. One of the best-known is Foldit (<a href="http://www.fold.it">www.fold.it</a>, <span class="citation" data-cites="miller2020">Miller et al. (<a href="#ref-miller2020" role="doc-biblioref">2020</a>)</span>), a gaming platform for biochemistry and structural biology teaching. It is a highly recommended alternative for most courses related with protein structure.</p>
+<p>In this course we are going to try a more recent proposal, recently twitted by Sergey Ovchinnikov (see <a href="https://twitter.com/sokrypton/status/1535857255647690753" class="uri">https://twitter.com/sokrypton/status/1535857255647690753</a>). It is based on ColabFold (see <a href="https://github.com/sokrypton/ColabFold" class="uri">https://github.com/sokrypton/ColabFold</a>&nbsp; and <span class="citation" data-cites="mirdita2022">Mirdita et al. (<a href="#ref-mirdita2022" role="doc-biblioref">2022</a>)</span>), an Alphafold2 (see <span class="citation" data-cites="jumper2021">Jumper et al. (<a href="#ref-jumper2021" role="doc-biblioref">2021</a>)</span>) free notebook in <a href="https://colab.research.google.com/?hl=en">Google Colab notebook</a>. All you need is a Google account a the following “cheatsheet”.</p>
+<div id="fig-anonymous-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://twitter.com/sokrypton/status/1535857255647690753"><img src="pics/cheatsheet.png" title="Protein hallucination" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Basic protein amino acids stats for protein design with ColabFold Single</figcaption><p></p>
+</figure>
+</div>
+<p>Now go to ColabFold Single: <a href="https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb" class="uri">https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb</a></p>
+<p>Construct some small proteins and compare the output. Note that the first model will take 3-5 min, but the others will be fasters. I provide here some interesting examples (one-letter amino acid code):</p>
+<ol type="1">
+<li><p>GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</p></li>
+<li><p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p></li>
+<li><p>VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV</p></li>
+<li><p>PVAVEARENGRLAVRVEGAIAVLIRENGRLVVRVEGG</p></li>
+<li><p>ACTWEGNKLTCA</p></li>
+<li><p>MPELEKHREELGEFLKKENTELEKHREELJEFLKKENLTELEKHREELJEFLKKENQ</p></li>
+<li><p>GIAVEIRENGRLEVRVEGGIAVEIRENGRLEVRVEGGIAVEIRENGRLEVRVEG</p></li>
+<li><p>MPELEKHREELGEFLKKENGIAVEIRENGRLEVRVEGYTDVKIEGGTERLKRFLEELR</p></li>
+<li><p>Creative challenge:</p>
+<ul>
+<li><p>Two helixes</p></li>
+<li><p>4 strands beta-sheet</p></li>
+<li><p>Alpha-beta-beta-alpha</p></li>
+</ul></li>
+</ol>
+<p><br>
+</p>
+<hr>
+</section>
+</section>
+<section id="references" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-callaway2020" class="csl-entry" role="doc-biblioentry">
+Callaway, Ewen. 2020. <span>“Revolutionary Cryo-EM Is Taking over Structural Biology.”</span> <em>Nature</em> 578 (7794): 201–1. <a href="https://doi.org/10.1038/d41586-020-00341-9">https://doi.org/10.1038/d41586-020-00341-9</a>.
+</div>
+<div id="ref-jumper2021" class="csl-entry" role="doc-biblioentry">
+Jumper, John, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger, Kathryn Tunyasuvunakool, et al. 2021. <span>“Highly Accurate Protein Structure Prediction with AlphaFold.”</span> <em>Nature</em> 596 (7873): 583–89. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a>.
+</div>
+<div id="ref-miller2020" class="csl-entry" role="doc-biblioentry">
+Miller, Josh Aaron, Firas Khatib, Haley Hammond, Seth Cooper, and Scott Horowitz. 2020. <span>“Introducing Foldit Education Mode.”</span> <em>Nature Structural &amp; Molecular Biology</em> 27 (9): 769–70. <a href="https://doi.org/10.1038/s41594-020-0485-6">https://doi.org/10.1038/s41594-020-0485-6</a>.
+</div>
+<div id="ref-mirdita2022" class="csl-entry" role="doc-biblioentry">
+Mirdita, Milot, Konstantin Schütze, Yoshitaka Moriwaki, Lim Heo, Sergey Ovchinnikov, and Martin Steinegger. 2022. <span>“ColabFold: making protein folding accessible to all.”</span> <em>Nature Methods</em> 19 (6): 679–82. <a href="https://doi.org/10.1038/s41592-022-01488-1">https://doi.org/10.1038/s41592-022-01488-1</a>.
+</div>
+<div id="ref-stollar2020" class="csl-entry" role="doc-biblioentry">
+Stollar, Elliott J, and David P Smith. 2020. <span>“Uncovering Protein Structure.”</span> <em>Essays in Biochemistry</em> 64 (4): 649–80. <a href="https://doi.org/10.1042/EBC20190042">https://doi.org/10.1042/EBC20190042</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Disclaimer</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./homology.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Homology Modeling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

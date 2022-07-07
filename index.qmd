@@ -1,7 +1,5 @@
-# Hands-on introduction to protein modeling (3 h)
 
-
-## Course Disclaimer
+# Course Disclaimer
 
 This brief instruction booklet contains the materials for the "Hands-on Protein Modeling" sessions I lectured at the [CIVIS Summer School Bioinformatics for non-bioinformaticians](https://civis.eu/en/civis-courses/bioinformatics-for-non-bioinformaticians-computational-analyses-in-health-and-life-sciences), Tübingen, Germany (18-22 July 2022).
 

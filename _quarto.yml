@@ -2,6 +2,19 @@ project:
   type: website
   output-dir: docs
 
+website:
+  title: "Hands-on protein modeling"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: intro.qmd
+        text: Introduction
+      - href: homology.qmd
+        text: Homology modeling
+        
+
 book:
   title: "Hands-on introduction to protein modeling"
   author: "Modesto Redrejo Rodríguez"
@@ -17,6 +30,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    toc: true
+    link-external-icon: true
+    link-external-newwindow: true
   pdf:
     documentclass: scrreprt
 

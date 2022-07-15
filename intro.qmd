@@ -17,7 +17,7 @@ format:
 bibliography: references.bib
 editor_options: 
   markdown: 
-    wrap: 72
+    wrap: 80
 ---
 
 ```{r wrap-hook, include=FALSE}
@@ -41,31 +41,28 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 
 [Structural
 Bioinformatics](https://en.wikipedia.org/wiki/Structural_bioinformatics "Wikipedia")
-is a broad discipline that covers structural and computational biology,
-from visualization and analysis of the structure of biomacromolecules to
-protein modeling and molecular docking. Powered by great technical
-advances, the field has experienced a great revolution in the last
-decade. The increase of experimental capacities to analyze the structure
-of proteins and other biological molecules and structures (see
-@callaway2020) and the development of Artificial Intelligence
-(AI)-assisted structure prediction boosted the capacity of life-science
-researchers to address a wide variety of questions regarding proteins
-diversity, evolution and function. The implications of this revolution
+is a broad discipline that covers structural and computational biology, from
+visualization and analysis of the structure of biomacromolecules to protein
+modeling and molecular docking. Powered by great technical advances, the field
+has experienced a great revolution in the last decade. The increase of
+experimental capacities to analyze the structure of proteins and other
+biological molecules and structures (see @callaway2020) and the development of
+Artificial Intelligence (AI)-assisted structure prediction boosted the capacity
+of life-science researchers to address a wide variety of questions regarding
+proteins diversity, evolution and function. The implications of this revolution
 in biology, biotechnology, and biomedicine are still unforeseen.
 
 \
-For a short introductory course on protein modeling, I propose the
-following three basic objectives:
+For a short introductory course on protein modeling, I propose the following
+three basic objectives:
 
-1.  Identify the main applications and limitations of the prediction of
-    protein structures in biomedicine and biotechnology.
+1.  Identify the main applications and limitations of the prediction of protein
+    structures in biomedicine and biotechnology.
 
-2.  Become familiar with classic and state-of-the-art protein modeling
-    methods.
+2.  Become familiar with classic and state-of-the-art protein modeling methods.
 
-3.  Basic understanding of the resulting output of a protein modeling
-    experiment and how to evaluate and eventually improve the model
-    quality.
+3.  Basic understanding of the resulting output of a protein modeling experiment
+    and how to evaluate and eventually improve the model quality.
 
 ## Warning for future structural biologists
 
@@ -75,91 +72,84 @@ https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf]
 The surrealist Belgian painter René Magritte created a collection of
 surrealistic paintings entitled [***La trahison des images***
 (1928--1929)](https://en.wikipedia.org/wiki/The_Treachery_of_Images "Magritte").
-The most renowned of those paintings show a smoking pipe and the
-following caption underneath: *"Ceci n'est pas une pipe"* (This is not a
-pipe). Yes, indeed! It is actually the painting of a pipe.
+The most renowned of those paintings show a smoking pipe and the following
+caption underneath: *"Ceci n'est pas une pipe"* (This is not a pipe). Yes,
+indeed! It is actually the painting of a pipe.
 
-Similarly, a picture of a protein, or a PDB file with the coordinates of
-a protein structure, is not a protein. It is a representation of ONE
-structure. Even experimentally determined structures have two main
-limitations that we should always keep in mind: (1) they are a fixed
-structure whereas proteins *in vivo* are flexible and dynamic and (2)
-they are subjected to experimental error and they often contain regions
-of low reliability. Moreover, even experimentally obtained
-macromolecular structures are to some degree models, with a variable
-ratio between experimental data and computational prediction to match
-the experimental data (X-ray diffraction, cryo-EM density maps, NMR,
-SAXS, FRET...) with previously known structures or prediction models.
-That does not mean that protein structures are useless, they can be very
-useful, but we must be aware of the limitations as well as the
-applications.
+Similarly, a picture of a protein, or a PDB file with the coordinates of a
+protein structure, is not a protein. It is a representation of ONE structure.
+Even experimentally determined structures have two main limitations that we
+should always keep in mind: (1) they are a fixed structure whereas proteins *in
+vivo* are flexible and dynamic and (2) they are subjected to experimental error
+and they often contain regions of low reliability. Moreover, even experimentally
+obtained macromolecular structures are to some degree models, with a variable
+ratio between experimental data and computational prediction to match the
+experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET...)
+with previously known structures or prediction models. That does not mean that
+protein structures are useless, they can be very useful, but we must be aware of
+the limitations as well as the applications.
 
 # Before going forward: Protein Structure 101
 
 Although you can make some protein modeling without being an expert in
-structural biology, a basic understanding of protein structure is
-strongly advisable. Over the years, I noticed that graduate students in
-biology, biomedicine, and related fields have a very different
-background on protein structure. If you want to review and update your
-background on protein structure, I recommend you the great review by
-@stollar2020 and the Wikipedia articles on protein structures
-(<https://en.wikipedia.org/wiki/Protein_structure>), which constituted
-my main source for this brief section.
+structural biology, a basic understanding of protein structure is strongly
+advisable. Over the years, I noticed that graduate students in biology,
+biomedicine, and related fields have a very different background on protein
+structure. If you want to review and update your background on protein
+structure, I recommend you the great review by @stollar2020 and the Wikipedia
+articles on protein structures
+(<https://en.wikipedia.org/wiki/Protein_structure>), which constituted my main
+source for this brief section.
 
 [![Protein structure levels, using human PCNA (PDB 1AXC) as an
 example.](pics/Protein_structure.png "Protein Structure")](https://en.wikipedia.org/wiki/Protein_structure)
 
-Proteins are key components of life, playing key roles in almost any
-possible vital function, either as structural, or scaffolding elements
-or as active enzymes that catalyze metabolic reactions. Proteins are
-built as polymers of amino acids and the sequence of amino acids of a
-particular protein can be also called the **primary structure** of the
-protein. Amino acid chains can spontaneously fold up into
-three-dimensional structures, mostly stabilized by hydrogen bonds
-between amino acids.  The amino acid sequence determines different
-layers of 3D structure. Each of the 20 natural amino acids has different
-physicochemical properties that affect its preferred conformation. Thus,
-the first level of folding is called **secondary structure**, forming
+Proteins are key components of life, playing key roles in almost any possible
+vital function, either as structural, or scaffolding elements or as active
+enzymes that catalyze metabolic reactions. Proteins are built as polymers of
+amino acids and the sequence of amino acids of a particular protein can be also
+called the **primary structure** of the protein. Amino acid chains can
+spontaneously fold up into three-dimensional structures, mostly stabilized by
+hydrogen bonds between amino acids.  The amino acid sequence determines
+different layers of 3D structure. Each of the 20 natural amino acids has
+different physicochemical properties that affect its preferred conformation.
+Thus, the first level of folding is called **secondary structure**, forming
 common patterns as we will see in a moment.
 
 [![Amino acids clasification by
 type](pics/aa.png "Amino acids clasification by type")](https://www.reddit.com/r/chemistry/comments/acyald/venn_diagram_showing_the_properties_of_the_20/)
 
 These stretches of secondary structure patterns can fold in 3D due to
-interactions between the side chains of amino acids. This is called
-protein **tertiary structure**. Finally, two or more individual peptide
-chains can form multisubunit proteins that have the so-called
-**quaternary structure**.
+interactions between the side chains of amino acids. This is called protein
+**tertiary structure**. Finally, two or more individual peptide chains can form
+multisubunit proteins that have the so-called **quaternary structure**.
 
-It should be noted that the peptide bond itself cannot rotate as it has
-a double bond-like character. Therefore, rotation can only occur about
-the bond between the Cα and the C = O group, (the phi (φ) angle) and the
-Cα and the NH group, (the psi (ψ) angle). In effect, the polypeptide
-backbone chain is composed of a repeating series of two rotatable bonds
-followed by one non-rotatable (peptide) bond. However, not all 360º of
-the psi and phi angles are possible as neighboring sidechains can clash
-due to steric hindrance. In effect, for certain angles and amino acid
-combinations, the atoms cannot be in the same physical place and this
-partly explains why some amino acids have a higher propensity
-(likelihood) to form different types of secondary structures.
+It should be noted that the peptide bond itself cannot rotate as it has a double
+bond-like character. Therefore, rotation can only occur about the bond between
+the Cα and the C = O group, (the phi (φ) angle) and the Cα and the NH group,
+(the psi (ψ) angle). In fact, the polypeptide backbone chain is composed of a
+repeating series of two rotatable bonds followed by one non-rotatable (peptide)
+bond. However, not all 360º of the psi and phi angles are possible as
+neighboring sidechains can clash due to steric hindrance. For certain angles and
+amino acid combinations, the atoms cannot be in the same physical place and this
+partly explains why some amino acids have a higher propensity (likelihood) to
+form different types of secondary structures.
 
-[![Scheme of a generic polypeptide chain. Residue side chains are
-denoted as R. Coloured rectangles indicate sets of six atoms that are
-coplanar due to the double-bond character of the peptide bond. Arrows
-indicate the bonds that are free to rotate with the angle of rotation
-about the N--Cα known as phi and about the Cα--C known as psi. Note that
-only peptide backbone bonds are labeled and in most cases the R group
-bond is free to
+[![Scheme of a generic polypeptide chain. Residue side chains are denoted as R.
+Coloured rectangles indicate sets of six atoms that are coplanar due to the
+double-bond character of the peptide bond. Arrows indicate the bonds that are
+free to rotate with the angle of rotation about the N--Cα known as phi and about
+the Cα--C known as psi. Note that only peptide backbone bonds are labeled and in
+most cases the R group bond is free to
 rotate.](pics/peptide_bond.png "Peptide bond")](https://portlandpress.com/essaysbiochem/article/64/4/649/226515/Uncovering-protein-structure)
 
-Within these restraints, the two principal local conformations that
-avoid steric hindrance and maximize backbone--backbone hydrogen bonding
-are the α-helix and the β-sheet secondary structures. The α-helix is a
-right-handed coil in which backbone NH group hydrogen bonds to the
-backbone C = O group of the amino acid located four residues earlier
-along the protein sequence. This results in a polypeptide chain that
-twists in a regular coil shape with the R-groups pointing outwards away
-from the peptide backbone. It takes approximately 3.6 residues to
+Within these restraints, the two principal local conformations that avoid steric
+hindrance and maximize backbone--backbone hydrogen bonding are the α-helix and
+the β-sheet secondary structures. The α-helix is a right-handed coil in which
+backbone NH group hydrogen bonds to the backbone C = O group of the amino acid
+located four residues earlier along the protein sequence. This results in a
+polypeptide chain that twists in a regular coil shape with the R-groups pointing
+outwards away from the peptide backbone. It takes approximately 3.6 residues to
 complete a full turn of a helix.
 
 ::: {layout-ncol="2"}
@@ -170,42 +160,39 @@ helix](pics/alpha.gif "Alpha helix")](https://en.wikipedia.org/wiki/Alpha_helix)
 sheet](pics/Animated_Beta_sheet.gif "Beta sheet")](https://en.wikipedia.org/wiki/Beta_sheet)
 :::
 
-Different amino-acid sequences have different propensities for forming
-α-helical structures.
-[Methionine](https://en.wikipedia.org/wiki/Methionine "Methionine"),
+Different amino-acid sequences have different propensities for forming α-helical
+structures. [Methionine](https://en.wikipedia.org/wiki/Methionine "Methionine"),
 [alanine](https://en.wikipedia.org/wiki/Alanine "Alanine"),
 [leucine](https://en.wikipedia.org/wiki/Leucine "Leucine"),
 [glutamate](https://en.wikipedia.org/wiki/Glutamate "Glutamate"), and
-[lysine](https://en.wikipedia.org/wiki/Lysine "Lysine") have especially
-high helix-forming propensities, whereas
+[lysine](https://en.wikipedia.org/wiki/Lysine "Lysine") have especially high
+helix-forming propensities, whereas
 [proline](https://en.wikipedia.org/wiki/Proline "Proline") and
 [glycine](https://en.wikipedia.org/wiki/Glycine "Glycine") have poor
 helix-forming propensities.
-[Proline](https://en.wikipedia.org/wiki/Proline "Proline") either breaks
-or kinks a helix, both because it cannot donate an amide [hydrogen
-bond](https://en.wikipedia.org/wiki/Hydrogen_bond "Hydrogen bond")
-(having no amide hydrogen), and also because its bulky sidechain
-interferes sterically with the backbone of the preceding turn. However,
-proline is often seen as the *first* residue of a helix, it is presumed
-due to its structural rigidity. At the other extreme,
-[glycine](https://en.wikipedia.org/wiki/Glycine "Glycine") also tends to
-disrupt helices because its high conformational flexibility makes it
-entropically expensive to adopt the relatively constrained α-helical
+[Proline](https://en.wikipedia.org/wiki/Proline "Proline") either breaks or
+kinks a helix, both because it cannot donate an amide [hydrogen
+bond](https://en.wikipedia.org/wiki/Hydrogen_bond "Hydrogen bond") (having no
+amide hydrogen), and also because its bulky sidechain interferes sterically with
+the backbone of the preceding turn. However, proline is often seen as the
+*first* residue of a helix, it is presumed due to its structural rigidity. At
+the other extreme, [glycine](https://en.wikipedia.org/wiki/Glycine "Glycine")
+also tends to disrupt helices because its high conformational flexibility makes
+it entropically expensive to adopt the relatively constrained α-helical
 structure.
 
 β-sheets are composed of two or more extended polypeptide chains called
-β-strands that run alongside each other. They can be arranged in either
-a parallel or antiparallel manner. The residues arrange themselves in a
-regular zigzag manner with the adjacent peptide bonds pointing in
-opposite directions. In this arrangement, the NH group and the C = O
-group of each amino acid are hydrogen-bonded to the C = O group and NH
-group respectively on the adjacent strands. Chains can run in opposite
-directions, forming an antiparallel β-sheet, or in the same direction,
-forming a parallel β-sheet. Sidechains from each of the residues point
-away from the sheets and alternate in opposite directions between
-residues. It is common to see a pattern of alternating hydrophilic and
-hydrophobic residues in the primary structure, giving the β-sheets
-hydrophilic and hydrophobic faces.
+β-strands that run alongside each other. They can be arranged in either a
+parallel or antiparallel manner. The residues arrange themselves in a regular
+zigzag manner with the adjacent peptide bonds pointing in opposite directions.
+In this arrangement, the NH group and the C = O group of each amino acid are
+hydrogen-bonded to the C = O group and NH group respectively on the adjacent
+strands. Chains can run in opposite directions, forming an antiparallel β-sheet,
+or in the same direction, forming a parallel β-sheet. Sidechains from each of
+the residues point away from the sheets and alternate in opposite directions
+between residues. It is common to see a pattern of alternating hydrophilic and
+hydrophobic residues in the primary structure, giving the β-sheets hydrophilic
+and hydrophobic faces.
 
 Large aromatic residues
 ([tyrosine](https://en.wikipedia.org/wiki/Tyrosine "Tyrosine"),
@@ -214,33 +201,30 @@ Large aromatic residues
 β-branched amino acids
 ([threonine](https://en.wikipedia.org/wiki/Threonine "Threonine"),
 [valine](https://en.wikipedia.org/wiki/Valine "Valine"),
-[isoleucine](https://en.wikipedia.org/wiki/Isoleucine "Isoleucine")) are
-favored to be found in β-strands. As in the case of α-helixes, β-strands
-are often ended by
-[glycines](https://en.wikipedia.org/wiki/Glycine "Glycine"), which are
-especially common in β-turns (the most common connector between
-strands), as [amino
-acids](https://en.wikipedia.org/wiki/Amino_acid "Amino acid") with
+[isoleucine](https://en.wikipedia.org/wiki/Isoleucine "Isoleucine")) are favored
+to be found in β-strands. As in the case of α-helixes, β-strands are often ended
+by [glycines](https://en.wikipedia.org/wiki/Glycine "Glycine"), which are
+especially common in β-turns (the most common connector between strands), as
+[amino acids](https://en.wikipedia.org/wiki/Amino_acid "Amino acid") with
 positive φ angles.
 
 ### Playing with secondary structures
 
 ![](pics/handson.png "Hands-on")
 
-There are a few online alternatives to model any peptide sequence and
-quickly see the effect of amino acid composition in the secondary
-structure. One of the best-known is Foldit
-([www.fold.it](http://www.fold.it), @miller2020), a gaming platform for
-biochemistry and structural biology teaching. It is a highly recommended
-alternative for most courses related to protein structure.
+There are a few online alternatives to model any peptide sequence and quickly
+see the effect of amino acid composition in the secondary structure. One of the
+best-known is Foldit ([www.fold.it](http://www.fold.it), @miller2020), a gaming
+platform for biochemistry and structural biology teaching. It is a highly
+recommended alternative for most courses related to protein structure.
 
-In this course we are going to try a more recent proposal, recently
-twitted by Sergey Ovchinnikov (see
-<https://twitter.com/sokrypton/status/1535857255647690753>). It is based
-on ColabFold (see <https://github.com/sokrypton/ColabFold>  and
-@mirdita2022), an Alphafold2 (see @jumper2021) free notebook in [Google
-Colab notebook](https://colab.research.google.com/?hl=en). All you need
-is a Google account and the following *cheatsheet*.
+In this course we are going to try a more recent proposal, recently twitted by
+Sergey Ovchinnikov (see
+<https://twitter.com/sokrypton/status/1535857255647690753>). It is based on
+ColabFold (see <https://github.com/sokrypton/ColabFold>  and @mirdita2022), an
+Alphafold2 (see @jumper2021) free notebook in [Google Colab
+notebook](https://colab.research.google.com/?hl=en). All you need is a Google
+account and the following *cheatsheet*.
 
 [![Basic protein amino acids stats for protein design with ColabFold
 Single](pics/cheatsheet.png "Protein hallucination")](https://twitter.com/sokrypton/status/1535857255647690753)
@@ -248,9 +232,9 @@ Single](pics/cheatsheet.png "Protein hallucination")](https://twitter.com/sokryp
 Now go to ColabFold Single:
 <https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb>
 
-Construct some small proteins and compare the output. Note that the
-first model will take 3-5 min, but the others will be faster. I provide
-here some interesting examples (IUPAC one-letter amino acid code):
+Construct some small proteins and compare the output. Note that the first model
+will take 3-5 min, but the others will be faster. I provide here some
+interesting examples (IUPAC one-letter amino acid code):
 
 1.  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
@@ -269,8 +253,8 @@ here some interesting examples (IUPAC one-letter amino acid code):
 \
 - Could you predict the structure of a poly-V or a poly-G?\
 \
-- What would happen if you introduce a K5W in the structure number 2?
-and in the 4?\
+- What would happen if you introduce a K5W in the structure number 2? and in the
+4?\
 \
 Now, try to create peptides with:\
 \
@@ -279,6 +263,6 @@ Now, try to create peptides with:\
 - Alpha-beta-beta-alpha.]{style="color:green"}**[\
 ]{style="color:green"}
 
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 # References

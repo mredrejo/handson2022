@@ -2,6 +2,7 @@
 title: "Hands-on introduction to Protein Modeling"
 author: "Modesto Redrejo Rodríguez"
 date: "`r Sys.Date()`"
+suppress-bibliography: true
 ---
 
 # About
@@ -14,7 +15,9 @@ Most of the materials are shared with the course *Structural Bioinformatics* tha
 
 [At the end of each section there are several questions highlighted in green that pretend to motivate you to think about the acquired knowledge and skills and go a little bit forward in the interpretation of the results.]{style="color:green"}
 
-The contents of this short course are also largely inspired in the works of others that shared their course materials, tips and other kind of resources on their own websites, GitHub or Twitter, including Alexandre Bovin, Sergey Ovchinnikov, Martin Steinegger, Carlos Outeiral, among many others. I tried to acknowledge each contribution and I apologize beforehand for those that I may have not mention.
+The contents of this short course are also largely inspired in the works of others that shared their course materials, tips and other kind of resources on their own websites, GitHub or Twitter, including Alexandre Bovin, Sergey Ovchinnikov, Martin Steinegger, Carlos Outeiral, among many others. I tried to acknowledge (and link!) each one of those contributions but I'd like to apologize beforehand for those that I may have not mention.
+
+As a suggestion, I would like to invite you to check the set of exercises on Structural Bioinformatics from the Pontificia Universidad Católica de Chile, described in [Engelberger et al. (2021)](https://pubs.acs.org/doi/10.1021/acs.jchemed.1c00022): <https://github.com/pb3lab/ibm3202>
 
 ## Contact
 

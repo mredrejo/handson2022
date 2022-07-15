@@ -127,7 +127,7 @@ div.csl-indent {
   <li><a href="#lets-try-alphafold2." id="toc-lets-try-alphafold2." class="nav-link" data-scroll-target="#lets-try-alphafold2.">Let’s try Alphafold2.</a></li>
   <li><a href="#corollary-has-levinthals-paradox-folded" id="toc-corollary-has-levinthals-paradox-folded" class="nav-link" data-scroll-target="#corollary-has-levinthals-paradox-folded">Corollary: Has Levinthal’s paradox “folded”?</a></li>
   </ul></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Useful links</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -170,7 +170,7 @@ div.csl-indent {
 
 <section id="how-did-we-get-to-the-era-of-alphafold-rel." class="level1">
 <h1>How did we get to the Era of Alphafold (&amp; rel.)?</h1>
-<p>As mentioned earlier, the introduction of HMM-based profiles during the first decade of this century led to a great improvement in template detection and protein modeling in the twilight-zone, i.e., proteins with only distant homologs (&lt;25-30% identity) in databases. These methods naturally evolved to iterative <u>threading</u> methods, based on multitemplate model construction, implemented in <a href="https://zhanggroup.org/I-TASSER/">I-TASSER</a> <span class="citation" data-cites="roy2010">(<a href="#ref-roy2010" role="doc-biblioref">Roy, Kucukural, and Zhang 2010</a>)</span>, <a href="http://raptorx.uchicago.edu/">RaptorX</a> <span class="citation" data-cites="peng2011">(<a href="#ref-peng2011" role="doc-biblioref">Peng and Xu 2011</a>)</span> and <a href="https://toolkit.tuebingen.mpg.de/tools/hhpred">HHpred</a> <span class="citation" data-cites="meier2015">(<a href="#ref-meier2015" role="doc-biblioref">Meier and Söding 2015</a>)</span>, among others.</p>
+<p>As mentioned earlier, the introduction of HMM-based profiles during the first decade of this century led to a great improvement in template detection and protein modeling in the twilight zone, i.e., proteins with only distant homologs (&lt;25-30% identity) in databases. These methods naturally evolved into iterative <u>threading</u> methods, based on multitemplate model construction, implemented in <a href="https://zhanggroup.org/I-TASSER/">I-TASSER</a> <span class="citation" data-cites="roy2010">(<a href="#ref-roy2010" role="doc-biblioref">Roy, Kucukural, and Zhang 2010</a>)</span>, <a href="http://raptorx.uchicago.edu/">RaptorX</a> [<span class="citation" data-cites="peng2011">Peng and Xu (<a href="#ref-peng2011" role="doc-biblioref">2011</a>)</span>], and <a href="https://toolkit.tuebingen.mpg.de/tools/hhpred">HHpred</a> <span class="citation" data-cites="meier2015">(<a href="#ref-meier2015" role="doc-biblioref">Meier and Söding 2015</a>)</span>, among others. We are not going to discuss these methods by lack of time and because they are currently somewhat disused as Alphafold2 captures all the attention, and we will move to the very last advancements. I advise checking the provided references and the <a href="#links">Useful links</a> below for a more accurate and comprehensive discussion on deep learning-fueled protein modeling.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
@@ -205,7 +205,7 @@ div.csl-indent {
 </div>
 <section id="the-recent-history-of-protein-structure-modeling-telling-by-a-contest-casp" class="level2">
 <h2 class="anchored" data-anchor-id="the-recent-history-of-protein-structure-modeling-telling-by-a-contest-casp">The recent history of protein structure modeling telling by a contest (CASP)</h2>
-<p>Every two years since 1994, structural bioinformatics groups carry out a worldwide experiment, predicting a set of unknown protein structures in a controlled competition and comparing their output with the experimentally obtained structure. This is the <strong>CASP</strong> or <a href="https://predictioncenter.org/"><em>Critical assessment of Protein Structure Prediction</em></a>.</p>
+<p>Every two years since 1994, structural bioinformatics groups carry out a worldwide experiment, predicting a set of unknown protein structures in a controlled, blind-test-like competition and comparing their output with the experimentally obtained structure. This is the <strong>CASP</strong> or <a href="https://predictioncenter.org/"><em>Critical assessment of Protein Structure Prediction</em></a>.</p>
 <div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://predictioncenter.org/casp13/zscores_final.cgi?formula=gdt_ts"><img src="pics/casp13.png" title="CASP13 results" class="img-fluid figure-img"></a></p>
@@ -222,22 +222,7 @@ div.csl-indent {
 <p>After Alphafold, similar methods were also developed and made available to the general public, like the <em>trRosetta</em> from Baker lab <span class="citation" data-cites="yang2020">(<a href="#ref-yang2020" role="doc-biblioref">Yang et al. 2020</a>)</span>, available in the <a href="https://robetta.bakerlab.org/">Robetta</a> server. This led to some controversy (mostly on Twitter) about the open access to the CASP software and later on DeepMind publishes all the code on GitHub.</p>
 </section>
 </section>
-<section id="alphafold2-started-a-new-era" class="level1">
-<h1>Alphafold2 started a new era</h1>
-<p>In CASP14 the expectation was very high and the guys from DeepMind did not disappoint anyone. Alphafold2 highly outperformed all competitors, both in relative (score respect the other groups) and absolute terms (lowest alpha-C RMSD).</p>
-<div id="fig-anonymous-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://predictioncenter.org/casp14/zscores_final.cgi?formula=gdt_ts"><img src="pics/casp14.png" title="CASP14 scores" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Comparative CASP14 scores</figcaption><p></p>
-</figure>
-</div>
-<div id="fig-anonymous-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://www.nature.com/articles/s41586-021-03819-2/figures/1"><img src="pics/jumper2021.png" title="Alphafold2" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Performance of Alphafold2 the CASP14 dataset relative to the top-15 entries. Data are median and the 95% confidence interval of the median, for alpha-carbom RMSD. Panels b-c-d show example comparison between model and experimental structures.</figcaption><p></p>
-</figure>
-</div>
-<p>Alphafold took some time to publish the method [<span class="citation" data-cites="jumper2021">Jumper et al. (<a href="#ref-jumper2021" role="doc-biblioref">2021</a>)</span>] and make it available on <a href="https://github.com/deepmind/alphafold">Github</a>, but other new methods, like RoseTTAfold [<span class="citation" data-cites="baek2021">Baek et al. (<a href="#ref-baek2021" role="doc-biblioref">2021</a>)</span>] and C-I-Tasser [<span class="citation" data-cites="zheng2021">Zheng et al. (<a href="#ref-zheng2021" role="doc-biblioref">2021</a>)</span>] were available on public servers from the very beginning. Surprisingly (at least for me) a group of independent scientists (<a href="https://twitter.com/sokrypton">Sergey Ovchinnikov</a>, <a href="https://twitter.com/milot_mirdita">Milot Mirdita</a>, and <a href="https://twitter.com/thesteinegger">Martin Steinegger</a>), decided to implement Alphafold2 in a <a href="https://github.com/sokrypton/ColabFold">Colab notebook</a>, named ColabFold <span class="citation" data-cites="mirdita2022">Mirdita et al. (<a href="#ref-mirdita2022" role="doc-biblioref">2022</a>)</span>, freely available online. They implemented some tricks to accelerate the modeling, mainly the use of <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">MMSeqs2</a> (developed by Martin Steinegger’s group) to search for homolog structures on Uniref30, which made Colabfold a quick method that made all the previous advanced methods almost useless. This was the real breakthrough in the protein structure field, making Alphafold2 available to every one and, also very important, facilitate the evolution of the method, implementing new features, like the prediction of protein complexes [<span class="citation" data-cites="evans">Evans et al. (<a href="#ref-evans" role="doc-biblioref">n.d.</a>)</span>], which was actually mentioned first on <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">Twitter</a> (slide 21)!</p>
+
 <table class="table">
 <caption>Protein modeling methods based on inter-residue interaction map threading using deep learning</caption>
 <thead>
@@ -292,6 +277,24 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+
+<section id="alphafold2-started-a-new-era" class="level1">
+<h1>Alphafold2 started a new era</h1>
+<p>In CASP14 the expectation was very high and the guys from DeepMind did not disappoint anyone. Alphafold2 highly outperformed all competitors, both in relative (score respect the other groups) and absolute terms (lowest alpha-C RMSD). As has been highlighted, the accuracy of many of the predicted structures was within the error margin of experimental determination methods <span class="citation" data-cites="mirdita2022">(see for instance <a href="#ref-mirdita2022" role="doc-biblioref">Mirdita et al. 2022</a>)</span>.</p>
+<div id="fig-anonymous-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://predictioncenter.org/casp14/zscores_final.cgi?formula=gdt_ts"><img src="pics/casp14.png" title="CASP14 scores" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Comparative CASP14 scores</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-anonymous-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.nature.com/articles/s41586-021-03819-2/figures/1"><img src="pics/jumper2021.png" title="Alphafold2" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Performance of Alphafold2 the CASP14 dataset relative to the top-15 entries. Data are median and the 95% confidence interval of the median, for alpha-carbom RMSD. Panels b-c-d show example comparison between model and experimental structures.</figcaption><p></p>
+</figure>
+</div>
+<p>Alphafold took some time (eight months, an eternity nowadays) to publish the method (<span class="citation" data-cites="jumper2021">Jumper et al. (<a href="#ref-jumper2021" role="doc-biblioref">2021</a>)</span>) and making it available on <a href="https://github.com/deepmind/alphafold">Github</a>, but other new methods, like RoseTTAfold (<span class="citation" data-cites="baek2021">Baek et al. (<a href="#ref-baek2021" role="doc-biblioref">2021</a>)</span>) and C-I-Tasser (<span class="citation" data-cites="zheng2021">Zheng et al. (<a href="#ref-zheng2021" role="doc-biblioref">2021</a>)</span>) could reproduce their results and were available on public servers, which may have push Deepmind to make everything available to the scientific community (see the Grace Huckins’ <a href="https://www.wired.com/story/without-code-for-deepminds-protein-ai-this-lab-wrote-its-own/">article</a> on Wired). Not surprisingly (at least for me), a group of independent scientists (<a href="https://twitter.com/sokrypton">Sergey Ovchinnikov</a>, <a href="https://twitter.com/milot_mirdita">Milot Mirdita</a>, and <a href="https://twitter.com/thesteinegger">Martin Steinegger</a>), decided to implement Alphafold2 in a <a href="https://github.com/sokrypton/ColabFold">Colab notebook</a>, named ColabFold <span class="citation" data-cites="mirdita2022">Mirdita et al. (<a href="#ref-mirdita2022" role="doc-biblioref">2022</a>)</span>, freely available online. Other free implementations of Alphafold have been and are available, but ColabFold has been the most widely discussed and known. They implemented some tricks to accelerate the modeling, mainly the use of <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">MMSeqs2</a> (developed by Martin Steinegger’s group) to search for homolog structures on Uniref30, which made Colabfold a quick method that made all the previous advanced methods almost useless. This was the real breakthrough in the protein structure field, making Alphafold2 available to every one and, also very important, facilitate the evolution of the method, implementing new features, like the prediction of protein complexes ( <span class="citation" data-cites="evans2022">Evans et al. (<a href="#ref-evans2022" role="doc-biblioref">2022</a>)</span>), which was actually mentioned first on <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">Twitter</a>.</p>
+
 <section id="why-is-alphafold2-so-freaking-accurate" class="level2">
 <h2 class="anchored" data-anchor-id="why-is-alphafold2-so-freaking-accurate">Why is Alphafold2 so freaking accurate?</h2>
 <p>The philosophy behind Alphafold and Alphafold2 is treating the protein folding problem as a machine learning problem of image processing. In all these problems, the input to the Deep Learning model is a volume (3D tensor). In the case of computer vision, 2D images expand as a volume because of the RGB or HSV channels. Similarly, in the case of distance prediction, predicted 1D and 2D features are transformed and packed into 3D volume with many channels of inter-residue information <span class="citation" data-cites="pakhrin2021">(<a href="#ref-pakhrin2021" role="doc-biblioref">Pakhrin et al. 2021</a>)</span>.</p>
@@ -301,8 +304,11 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">From the perspective of Deep Learning method development, the problem of protein distogram or real-valued distance prediction (bottom row) is similar to the ‘depth prediction problem’ in computer vision. From</figcaption><p></p>
 </figure>
 </div>
-<p>Alphafold2 can be explained in three independent tasks (see picture below). First, it queries several databases of protein sequences and constructs an MSA that is used to select templates. In the second part of the diagram, AlphaFold 2 takes the multiple sequence alignment and the templates, and processes them in a <em>transformer</em>. The objective of this part is to extract layers of information to generate residue interaction maps. A better model of the MSA will improve the network’s characterization of the geometry, which simultaneously will help refine the model of the MSA. Importantly, this process is iterative and the number of recycling steps improves the model (the original model uses 48 blocks of cycles).</p>
-<p>The third part of the pipeline is the structure building module, which uses the information from the previous steps to construct a 3D model structure protein of the query sequence. This network will give you a single model, without any energy optimization step.</p>
+<p>Alphafold2 can be explained in three independent tasks (see picture below). First, it queries several databases of protein sequences and constructs an MSA that is used to select templates. In the second part of the diagram, AlphaFold 2 takes the multiple sequence alignment and the templates, and processes them in a <em>transformer</em>. This process has been referred by some authors as inter-residue interaction map-threading <span class="citation" data-cites="bhattacharya2021">(<a href="#ref-bhattacharya2021" role="doc-biblioref">Bhattacharya et al. 2021</a>)</span>. The objective of this part is to extract layers of information to generate residue interaction maps. A better model of the MSA will improve the network’s characterization of the geometry, which simultaneously will help refine the model of the MSA. Importantly, in the AF2 Evoformer, this process is iterative and the information goes back and forth throughout the network. At every recycling step, the complexity of the map increases and thus, the model improves (the original model uses 48 blocks of cycles). As explained in the great <a href="https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/">post</a> from Carlos Outerial at the OPIG site:</p>
+<blockquote class="blockquote">
+<p><em>This is easier to understand as an example. Suppose that you look at the multiple sequence alignment and notice a correlation between a pair of amino acids. Let’s call them A and B. You hypothesize that A and B are close, and translate this assumption into your model of the structure. Subsequently, you examine said model and observe that, since A and B are close, there is a good chance that C and D should be close. This leads to another hypothesis, based on the structure, which can be confirmed by searching for correlations between C and D in the MSA. By repeating this several times, you can build a pretty good understanding of the structure.</em></p>
+</blockquote>
+<p>The third part of the pipeline is the structure building module, which uses the information from the previous steps to construct a 3D model structure protein of the query sequence. This network will give you a single model, without any energy optimization step. Model building is based in a new concept of 3D structures generation, named IPA (Invariant Point Attention) and the use of a curated list of parametrised list of torsion angles to generate the side chains.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
@@ -311,7 +317,7 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Oxford Proteins Informatics Group Blog, modified From</figcaption><p></p>
 </figure>
 </div>
-<p>As mentioned above, Colabfold aims to make the process faster by using MMSeqs in the first block. Additionally, the number of recycling steps can also be adapted. Moreover, different Colabfold notebooks have been developed (and evolved) to allow some customization and other feature, like batch processing of multiple proteins and identification of protein-protein interactions <span class="citation" data-cites="mirdita2022">(<a href="#ref-mirdita2022" role="doc-biblioref">Mirdita et al. 2022</a>)</span>.</p>
+<p>As mentioned above, Colabfold aims to make the process faster by using MMSeqs in the first block. Additionally, the number of recycling steps can also be adapted. Moreover, different Colabfold notebooks have been developed (and evolved) to allow some customization and other feature, like batch processing of multiple proteins avoiding recompilation and identification of protein-protein interactions <span class="citation" data-cites="mirdita2022">(<a href="#ref-mirdita2022" role="doc-biblioref">Mirdita et al. 2022</a>)</span>.</p>
 <p>Alphafold models can be evaluated by the mean <strong>pLDDT</strong>, a per-residue confidence metric. The model confidence can vary greatly along a chain so it is important to consult the confidence when interpreting structural features. Very often, the lower confidence fragments are not product of a poor prediction but an indicator of protein disorder.</p>
 </section>
 <section id="lets-try-alphafold2." class="level2">
@@ -322,16 +328,17 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="corollary-has-levinthals-paradox-folded">Corollary: Has Levinthal’s paradox “folded”?</h2>
 <p>The development of Alphafold and the <a href="https://alphafold.ebi.ac.uk/">Alphafold structures Database</a> in collaboration with <a href="https://www.ebi.ac.uk/about">EMBL-EBI</a> has been the origin of a New Era. Scientific publications and journals worldwide published long articles about the meaning of this breakthrough in science and its applications in biotechnology and biomedicine<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and DeepMind claimed to have <a href="https://www.deepmind.com/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology">Solved a 50-years Grand Challenge in biochemistry</a>. The coverage of the protein structure space has been greatly increased <span class="citation" data-cites="porta-pardo2022">(<a href="#ref-porta-pardo2022" role="doc-biblioref">Porta-Pardo et al. 2022</a>)</span>.</p>
 <p>However, some scientists have claimed that Alphafold2 and RoseTTAfold actually “cheat” a bit as it does not really solve the problem but generate a deep learning pipeline that “bypass” the problem <span class="citation" data-cites="pederson2021">(<a href="#ref-pederson2021" role="doc-biblioref">Pederson 2021</a>)</span>. In agreement with that, it has been shown that machine learning methods actually do not reproduce the expected folding pathways while improving the structures during the recycling steps <span class="citation" data-cites="outeiral">Outeiral, Nissley, and Deane (<a href="#ref-outeiral" role="doc-biblioref">n.d.</a>)</span>.</p>
-<p>In conclusion, I do believe that Levinthal’s paradox has not been (yet) fully solved, but almost, and solving it will probably reduce the limitations of Alphafold2. However, <a href="https://predictioncenter.org/casp15/index.cgi">CASP15</a> is currently being held and maybe I will have to change my mind later this year.</p>
+<p>In conclusion, I do believe that Levinthal’s paradox has not been (yet) fully solved, but clearly almost <span class="citation" data-cites="al-janabi2022">(<a href="#ref-al-janabi2022" role="doc-biblioref">Al-Janabi 2022</a>)</span>, and solving it will probably reduce the limitations of Alphafold2. However, <a href="https://predictioncenter.org/casp15/index.cgi">CASP15</a> is currently being held and maybe I will have to change my mind later this year.</p>
 </section>
 </section>
-<section id="useful-links" class="level1">
+<section id="links" class="level1">
 <h1>Useful links</h1>
 <ul>
 <li><p>Introductory article to Neural Networks at the IBM site: <a href="https://www.ibm.com/cloud/learn/neural-networks" class="uri">https://www.ibm.com/cloud/learn/neural-networks</a></p></li>
 <li><p>ColabFold Tutorial presented presented by Sergey Ovchinnikov and Martin Steineggerat the Boston Protein Design and Modeling Club (6 ago 2021). <a href="https://www.youtube.com/watch?v=Rfw7thgGTwI">[video]</a> <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI">[slides]</a>.</p></li>
 <li><p>Post about Alphafold2 in the Oxford Protein Informatics Group site: <a href="https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/" class="uri">https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/</a></p></li>
 <li><p>A very good digest article about the Alphafold2 paper: <a href="https://moalquraishi.wordpress.com/2021/07/25/the-alphafold2-method-paper-a-fount-of-good-ideas/" class="uri">https://moalquraishi.wordpress.com/2021/07/25/the-alphafold2-method-paper-a-fount-of-good-ideas/</a></p></li>
+<li><p>Post on the Alphafold2 revolution meaning in biomedicine at the the UK Institute for Cancer Research website: <a href="https://www.icr.ac.uk/blogs/the-drug-discoverer/page-details/reflecting-on-deepmind-s-alphafold-artificial-intelligence-success-what-s-the-real-significance-for-protein-folding-research-and-drug-discovery" class="uri">https://www.icr.ac.uk/blogs/the-drug-discoverer/page-details/reflecting-on-deepmind-s-alphafold-artificial-intelligence-success-what-s-the-real-significance-for-protein-folding-research-and-drug-discovery</a></p></li>
 <li><p>A post that explain how Alphafold2 and RoseTTAfold code became publically available: <a href="https://www.wired.com/story/without-code-for-deepminds-protein-ai-this-lab-wrote-its-own/" class="uri">https://www.wired.com/story/without-code-for-deepminds-protein-ai-this-lab-wrote-its-own/</a></p></li>
 </ul>
 </section>
@@ -340,14 +347,17 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-al-janabi2022" class="csl-entry" role="doc-biblioentry">
+Al-Janabi, Aisha. 2022. <span>“Has DeepMind’s AlphaFold Solved the Protein Folding Problem?”</span> <em>BioTechniques</em> 72 (3): 73–76. <a href="https://doi.org/10.2144/btn-2022-0007">https://doi.org/10.2144/btn-2022-0007</a>.
+</div>
 <div id="ref-baek2021" class="csl-entry" role="doc-biblioentry">
 Baek, Minkyung, Frank DiMaio, Ivan Anishchenko, Justas Dauparas, Sergey Ovchinnikov, Gyu Rie Lee, Jue Wang, et al. 2021. <span>“Accurate prediction of protein structures and interactions using a three-track neural network.”</span> <em>Science (New York, N.Y.)</em> 373 (6557): 871–76. <a href="https://doi.org/10.1126/science.abj8754">https://doi.org/10.1126/science.abj8754</a>.
 </div>
-<div id="ref-bhattacharya2022" class="csl-entry" role="doc-biblioentry">
-Bhattacharya, Sutanu, Rahmatullah Roche, Bernard Moussad, and Debswapna Bhattacharya. 2022. <span>“DisCovER: Distance- and Orientation-Based Covariational Threading for Weakly Homologous Proteins.”</span> <em>Proteins: Structure, Function, and Bioinformatics</em> 90 (2): 579–88. <a href="https://doi.org/10.1002/prot.26254">https://doi.org/10.1002/prot.26254</a>.
+<div id="ref-bhattacharya2021" class="csl-entry" role="doc-biblioentry">
+Bhattacharya, Sutanu, Rahmatullah Roche, Md Hossain Shuvo, and Debswapna Bhattacharya. 2021. <span>“Recent Advances in Protein Homology Detection Propelled by Inter-Residue Interaction Map Threading.”</span> <em>Frontiers in Molecular Biosciences</em> 8: 643752. <a href="https://doi.org/10.3389/fmolb.2021.643752">https://doi.org/10.3389/fmolb.2021.643752</a>.
 </div>
-<div id="ref-evans" class="csl-entry" role="doc-biblioentry">
-Evans, Richard, Michael O’Neill, Alexander Pritzel, Natasha Antropova, Andrew Senior, Tim Green, Augustin Žídek, et al. n.d. <span>“Protein Complex Prediction with AlphaFold-Multimer.”</span> <a href="https://doi.org/10.1101/2021.10.04.463034">https://doi.org/10.1101/2021.10.04.463034</a>.
+<div id="ref-evans2022" class="csl-entry" role="doc-biblioentry">
+Evans, Richard, Michael O’Neill, Alexander Pritzel, Natasha Antropova, Andrew Senior, Tim Green, Augustin Žídek, et al. 2022. <span>“Protein Complex Prediction with AlphaFold-Multimer.”</span> <a href="https://www.biorxiv.org/content/10.1101/2021.10.04.463034v2">https://www.biorxiv.org/content/10.1101/2021.10.04.463034v2</a>.
 </div>
 <div id="ref-jones2012" class="csl-entry" role="doc-biblioentry">
 Jones, David T., Daniel W. A. Buchan, Domenico Cozzetto, and Massimiliano Pontil. 2012. <span>“PSICOV: precise structural contact prediction using sparse inverse covariance estimation on large multiple sequence alignments.”</span> <em>Bioinformatics (Oxford, England)</em> 28 (2): 184–90. <a href="https://doi.org/10.1093/bioinformatics/btr638">https://doi.org/10.1093/bioinformatics/btr638</a>.

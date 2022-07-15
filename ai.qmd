@@ -82,11 +82,12 @@ accuracy.
 
 In this context, introduction of supervised machine learning methods that
 predict contacts from distant protein families, outperforming ECA methods by the
-use of multilayer neural networks \[@jones2015, @ma2015\]. This methods also
+use of multilayer neural networks [@jones2015, @ma2015]. This methods also
 benefit from the use of the so-called high resolution contact maps, that
-contained not only contact information, but also distances and angles.
+contained not only contact information, but also probabilities, distances and
+angles.
 
-![High-resolution contact maps of 6MSP. From
+![Example of high-resolution contact maps of 6MSP. From
 @yang2020](pics/high_res_maps.png "High-resolution contact maps")
 
 ## The recent history of protein structure modeling telling by a contest (CASP)
@@ -105,13 +106,15 @@ The best research groups in the field test their new methods and protocols in
 CASP. However, in CASP13 (2018) an AI company called
 [Deepmind](https://en.wikipedia.org/wiki/DeepMind) (Google Subsidiary) entered
 in the scene. Their method, named Alphafold [@senior2020] clearly won CASP13.
-Bassically, Alphafold implemented some improvements in recently used approaches,
-creating a new whole pipeline. Instead of create contact maps from the alingment
-to fold the structure they used a MRF unit (Markov Random Field) to extract in
-advance the main features of the MSA and process into a multilayer NN called
-ResNet that provide the distant map and other information that you can use to
-create the structure and then improve it by energy minimization and substitution
-of portions with a selected DB of protein fragments.
+Alphafold implemented some improvements in a few recently used approaches,
+creating a new whole pipeline. Basically, instead of create contact maps from
+the alignment to then fold the structure, they used a MRF unit (Markov Random
+Field) to extract in advance the main features of sequence and the MSA and
+process all of that info into a multilayer NN (called ResNet) that provides the
+distant map and other information. Then, Alphafold uses all the possibly
+obtained information to create the structure and then improve it by energy
+minimization and substitution of portions with a selected DB of protein
+fragments.
 
 [![Workflow of the first Alphafold method presented in CASP13. MSA stands for
 multiple sequence alignment; PSSM indicates Position-specific-scoring matrix and
@@ -141,7 +144,7 @@ Data are median and the 95% confidence interval of the median, for alpha-carbom
 RMSD. Panels b-c-d show example comparison between model and experimental
 structures.](pics/jumper2021.png "Alphafold2")](https://www.nature.com/articles/s41586-021-03819-2/figures/1)
 
-Alphafold took some time to publish the method [@jumper2021\] and make it
+Alphafold took some time to publish the method \[@jumper2021\] and make it
 available on [Github](https://github.com/deepmind/alphafold), but other new
 methods, like RoseTTAfold \[@baek2021\] and C-I-Tasser \[@zheng2021\] were
 available on public servers from the very beginning. Surprisingly (at least for
@@ -158,10 +161,42 @@ Uniref30, which made Colabfold a quick method that made all the previous
 advanced methods almost useless. This was the real breakthrough in the protein
 structure field, making Alphafold2 available to every one and, also very
 important, facilitate the evolution of the method, implementing new features,
-like the prediction of protein complexes \[@evans], which was actually mentioned
-first on
+like the prediction of protein complexes \[@evans\], which was actually
+mentioned first on
 [Twitter](https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15)
 (slide 21)!
+
++----------------+----------------+--------------------------------------------+
+| Method         | Reference(s)   | Link                                       |
++================+================+============================================+
+| RaptorX        | @wang2017      | <http://raptorx.uchicago.edu/ContactMap/>  |
+| -contact       |                |                                            |
++----------------+----------------+--------------------------------------------+
+| CE-threader    | @zheng2019     | <https://zhanggroup.org/CEthreader/>       |
++----------------+----------------+--------------------------------------------+
+| DisCovEr       | @bh            | <htt                                       |
+|                | attacharya2022 | ps://github.com/Bhattacharya-Lab/DisCovER> |
++----------------+----------------+--------------------------------------------+
+| trRosetta      | @yang2020      | <https://robetta.bakerlab.org/>            |
++----------------+----------------+--------------------------------------------+
+| Alphafold      | @senior2020    | \<https://github.com/deepm                 |
+|                |                | ind/deepmin                                |
+|                |                | d-research/tree/master/alphafold_casp13aa> |
++----------------+----------------+--------------------------------------------+
+| RoseTTAfold    | @baek2021      | <https://robetta.bakerlab.org/>            |
++----------------+----------------+--------------------------------------------+
+| Alphafold2     | @jumper2021\   | [https://git                               |
+|                | & @mirdita2022 | hub.com/deepmind/alphafol                  |
+|                |                | d](https://githu%20b.com/dee%20pmind/alpha |
+|                |                | foldhttps://github.com/deepmind/alphafold) |
+|                |                |                                            |
+|                |                | <https://github.com/sokrypton/ColabFold>   |
++----------------+----------------+--------------------------------------------+
+| C-I-Tasser     | @zheng2021     | <https://zhanggroup.org/C-I-TASSER/>       |
++----------------+----------------+--------------------------------------------+
+
+: Protein modeling methods based on inter-residue interaction map threading
+using deep learning
 
 ## Why is Alphafold2 so freaking accurate?
 
@@ -173,10 +208,9 @@ channels. Similarly, in the case of distance prediction, predicted 1D and 2D
 features are transformed and packed into 3D volume with many channels of
 inter-residue information [@pakhrin2021].
 
-[![From the perspective of Deep Learning method development, the problem of
+![From the perspective of Deep Learning method development, the problem of
 protein distogram or real-valued distance prediction (bottom row) is similar to
-the 'depth prediction problem' in computer vision. From
-](pics/machine_fold.png)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8197379/pdf/ijms-22-05553.pdf)
+the 'depth prediction problem' in computer vision. From](pics/machine_fold.png)
 
 Alphafold2 can be explained in three independent tasks (see picture below).
 First, it queries several databases of protein sequences and constructs an MSA
@@ -194,8 +228,8 @@ information from the previous steps to construct a 3D model structure protein of
 the query sequence. This network will give you a single model, without any
 energy optimization step.
 
-[![Oxford Proteins Informatics Group Blog, modified From
-](pics/alphafols2.png "Alphafold2")](https://www.blopig.com/blog/2021/07/alphafold-2-is-here-whats-behind-the-structure-prediction-miracle/)
+![Oxford Proteins Informatics Group Blog, modified
+From](pics/alphafols2.png "Alphafold2")
 
 As mentioned above, Colabfold aims to make the process faster by using MMSeqs in
 the first block. Additionally, the number of recycling steps can also be
@@ -204,34 +238,11 @@ evolved) to allow some customization and other feature, like batch processing of
 multiple proteins and identification of protein-protein interactions
 [@mirdita2022].
 
-+---------------+-------------------+-------------------------------------------------------+
-| Method        | Reference(s)      | Link                                                  |
-+===============+===================+=======================================================+
-| RaptorX       | @wang2017         | <http://raptorx.uchicago.edu/ContactMap/>             |
-| -contact      |                   |                                                       |
-+---------------+-------------------+-------------------------------------------------------+
-| CE-threader   | @zheng2019        | <https://zhanggroup.org/CEthreader/>                  |
-+---------------+-------------------+-------------------------------------------------------+
-| DisCovEr      | @bhattacharya2022 | <https://github.com/Bhattacharya-Lab/DisCovER>        |
-+---------------+-------------------+-------------------------------------------------------+
-| trRosetta     | @yang2020         | <https://robetta.bakerlab.org/>                       |
-+---------------+-------------------+-------------------------------------------------------+
-| Alphafold     | @senior2020       | <https://github.com/deepm                             |
-|               |                   | ind/deepmind-research/tree/master/alphafold_casp13aa> |
-+---------------+-------------------+-------------------------------------------------------+
-| RoseTTAfold   | @baek2021         | <https://robetta.bakerlab.org/>                       |
-+---------------+-------------------+-------------------------------------------------------+
-| Alphafold2    | @jumper2021\      | [https://git                                          |
-|               | & @mirdita2022    | hub.com/deepmind/alphafold](https://githu%20b.com/dee |
-|               |                   | pmind/alphafoldhttps://github.com/deepmind/alphafold) |
-|               |                   |                                                       |
-|               |                   | <https://github.com/sokrypton/ColabFold>              |
-+---------------+-------------------+-------------------------------------------------------+
-| C-I-Tasser    | @zheng2021        | <https://zhanggroup.org/C-I-TASSER/>                  |
-+---------------+-------------------+-------------------------------------------------------+
-
-: Protein modeling methods based on inter-residue interaction map threading
-using deep learning
+Alphafold models can be evaluated by the mean **pLDDT**, a per-residue
+confidence metric. The model confidence can vary greatly along a chain so it is
+important to consult the confidence when interpreting structural features. Very
+often, the lower confidence fragments are not product of a poor prediction but
+an indicator of protein disorder.
 
 ## Let's try Alphafold2.
 

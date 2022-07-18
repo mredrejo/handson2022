@@ -13,17 +13,11 @@ website:
         text: Introduction
       - href: homology.qmd
         text: Homology modeling
+      - href: ai.qmd
+        text: AI-based modeling
         
 
-book:
-  title: "Hands-on introduction to protein modeling"
-  author: "Modesto Redrejo Rodríguez"
-  date: "`r Sys.Date()`"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - homology.qmd
-    - references.qmd
+
 
 bibliography: references.bib
 
